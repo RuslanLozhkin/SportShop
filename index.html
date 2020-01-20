@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Super Sport Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+  <div class="content" id="content" ref="home">
+    <header class="header" id="header">
+      <svg class="header__down" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44"
+        viewBox="0 0 24 24" v-on:click="scrollDown('about')">
+        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+      </svg>
+      <h1 class="header__title">Super Sport Shop</h1>
+      <div class="header__menu" id="header__menu" v-on:click="swap">
+        <img src="images/menu-thin.png" alt="Menu">
+        <p class="header__p">MENU</p>
+      </div>
+
+      <div class="header__navwrap" id="header__navwrap" v-bind:class="{show: isShow, hide: isHide}">
+        <div class="header__userwrap">
+
+          <form class="header__user" id="header__user" action="#">
+            <input type="text" name="userin" id="header__userin" placeholder="email@email.com" class="header__userin"
+              autocomplete="username">
+            <input type="password" name="password" id="header__password" placeholder="************"
+              class="header__password" autocomplete="current-password">
+            <input type="submit" value="Enter" class="header__enter" id="header__enter">
+            <input type="submit" value="Register" class="header__register" id="header__register">
+          </form>
+
+        </div>
+
+        <nav>
+          <ul class="header__ul" id="header__ul">
+
+            <li class="header__li" id="header__lis">
+              <a href="#" class="header__a" id="header__as" v-on:click="scrollDown('sneakers')">
+                <p>
+                  Sneakers
+                </p>
+                <img src="images/shop/sneakers/shoes1-3.jpg" alt="Sneakers">
+              </a>
+            </li>
+            <li class="header__li" id="header__lip">
+              <a href="#" class="header__a" id="header__ap" v-on:click="scrollDown('pants')">
+                <p>
+                  Pants
+                </p>
+                <img src="images/shop/pants/pants4.jpg" alt="Pants">
+              </a>
+            </li>
+            <li class="header__li" id="header__lit">
+              <a href="#" class="header__a" id="header__at" v-on:click="scrollDown('tShirts')">
+                <p>
+                  T-shirts
+                </p>
+                <img src="images/shop/t-shirts/t-shirt1.jpg" alt="T-shirts">
+              </a>
+            </li>
+            <li class="header__li" id="header__lic">
+              <a href="#" class="header__a" id="header__ac" v-on:click="scrollDown('contacts')">
+                <p>
+                  Contacts
+                </p>
+                <img src="images/shop/sneakers/shoes1-3.jpg" alt="Contacts">
+              </a>
+            </li>
+            <li class="header__li" id="header__lib">
+              <a href="#" class="header__a" id="header__ab" v-on:click="swapCart">
+                <p>
+                  shopcart
+                </p>
+                <img src="images/shop/sneakers/shoes1-3.jpg" alt="Shopcart">
+              </a>
+            </li>
+            <li class="header__li" id="header__lia">
+              <a href="#" class="header__a" id="header__aa" v-on:click="scrollDown('about')">
+                <p>
+                  about
+                </p>
+                <img src="images/shop/sneakers/shoes1-3.jpg" alt="About">
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <form action="#" class="header__search" id="header__search">
+          <input type="text" name="search" id="header__input" class="header__input">
+          <button class="header__submit" id="header__submit">
+            <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
+              <path d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 
+              1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 
+              4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 
+              5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 
+              3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 
+              6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z" />
+            </svg>
+          </button>
+        </form>
+
+      </div>
+
+      <div class="header__content" id="header__content">
+        <video class="header__video" id="header__video" loop="loop" autoplay="" muted="">
+          <source src="images/moviebg/shoes.mp4" type="video/mp4">
+        </video>
+        <div class="header__content--bg"></div>
+      </div>
+      <!--
+        Пересмотреть как я обрабатываю добавление товаров в корзину в разметке,
+        возможно ошибка отображения только последнего товара сокрыта ниже
+
+      -->
+      <div class="shopcart" id="shopcart" v-bind:class="{show: isOpenShopcart, hide: isHideShopcart}">
+        <div class="shopcart__wrapper">
+          <h2>Super Sport Shop Cart</h2>
+          <div class="shopcart__username" id="shopcart__username">
+            <h3>Lorem Ipsum</h3>
+          </div>
+          <div class="shopcart__list" id="shopcart__list">
+            <ol class="shopcart__ol" id="shopcart__ol">
+              <li v-for="item in localCard">
+                <p>{{item.name}}</p>
+                <p>
+                  price: ${{item.price}}<br>
+                  size:  {{item.sizes}}
+                </p>
+                <img v-bind:src="item.image" alt="">
+              </li>
+            </ol>
+          </div>
+          <div class="shopcart__total">
+            <p>
+              Total: {{localCard.total}}
+            </p>
+          </div>
+          <form action="#" class="shopcart__address" id="shopcart__address">
+            <input type="number" name="address" id="addressZip" placeholder="Zip" v-model="delAddress.zip">
+            <input type="text" name="address" id="addressCountry" placeholder="Country" v-model="delAddress.country">
+            <input type="text" name="address" id="addressCity" placeholder="City" v-model="delAddress.city">
+            <input type="text" name="address" id="addressStreet" placeholder="Streent" v-model="delAddress.street">
+            <input type="number" name="address" id="addressHouse" placeholder="House number" v-model="delAddress.number">
+            <input type="number" name="address" id="addressApp" placeholder="Number of appartments" v-model="delAddress.appartment">
+            <input type="submit" id="shopcart__submit" value="Buy" v-on:click="cartSubmit">
+          </form>
+          <div class="shopcart__close" v-on:click="closeCart">
+            close
+          </div>
+        </div>
+      </div>
+      <pre class="header__about">
+    “I can’t do it” never yet accomplished 
+anything – “I will try” has performed miracles.
+      </pre>
+    </header>
+
+    <main id="main">
+
+      <article class="about" id="about" ref="about">
+        <h3>Who We Are</h3>
+        <p>
+          We are an online store with independent views on clothing and style. 
+          Why do you need to dress in uncomfortable austere fettering clothes? 
+          Dress in easy clothing for independent people.
+        </p>
+      </article>
+
+      <article class="male">
+        <section class="sneakers" id="sneakers">
+          <div class="carousel">
+            <h3 class="carousel__title" ref="sneakers">Man Sneakers</h3>
+            <p class="carousel__text">
+              We are glad to present you a new male collection of sneakers 2020
+            </p>
+            <ul class="carousel__ul">
+              <li class="carousel__li" v-for="boot in sneakers" :key="boot.id">
+                <a href="#" class="carousel__a">
+                  <div class="carousel__img">
+                    <img v-bind:src="boot.image" v-bind:alt="boot.name">
+                  </div>
+                  <div class="carousel__descr">
+                    <h4 class="carousel__goodsname">{{boot.name}}</h4>
+                    <div class="carousel__addtocart">
+                      <p v-on:click="(e) => addToCart(e, boot)">Add to Cart</p>
+                    </div>
+                    <p>
+                      {{boot.description}}
+                    </p>
+                      <h4 class="carousel__price">${{boot.price}}</h4>
+                    <ul class="carousel__ulnested">
+                      <li class="carousel__linested" v-for="size in boot.sizes" v-bind:class="{able: size.isAble}" v-on:click="(e) => setSize(e, boot, size.value)">
+                        {{size.value}}
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <svg class="carousel__down" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44"
+              viewBox="0 0 24 24" v-on:click="scrollDown('pants')">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+            </svg>
+            <div class="carousel__next" v-on:click="next(sneakers)">next</div>
+            <div class="carousel__prev" v-on:click="prev(sneakers)">prev</div>
+          </div>
+        </section>
+  
+        <section class="pants" id="pants">
+          <div class="carousel">
+            <h3 class="carousel__title" ref="pants">Man Pants</h3>
+            <p class="carousel__text">
+              We are glad to present you a new male collection of pants 2020
+            </p>
+            <ul class="carousel__ul">
+              <li class="carousel__li" v-for="pant in pants" :key="pant.id">
+                <a href="#" class="carousel__a">
+                  <div class="carousel__img">
+                    <img v-bind:src="pant.image" v-bind:alt="pant.name">
+                  </div>
+                  <div class="carousel__descr">
+                    <h4 class="carousel__goodsname">{{pant.name}}</h4>
+                    <div class="carousel__addtocart">
+                      <p v-on:click="(e) => addToCart(e, pant)">Add to Cart</p>
+                    </div>
+                    <p>
+                      {{pant.description}}
+                    </p>
+                      <h4 class="carousel__price">${{pant.price}}</h4>
+                    <ul class="carousel__ulnested">
+                      <li class="carousel__linested" v-for="size in pant.sizes" v-bind:class="{able: size.isAble}" v-on:click="(e) => setSize(e, pant, size.value)">
+                        {{size.value}}
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <svg class="carousel__down" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44"
+              viewBox="0 0 24 24" @click="scrollDown('tShirts')">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+            </svg>
+            <div class="carousel__next" v-on:click="next(pants)">next</div>
+            <div class="carousel__prev" v-on:click="prev(pants)">prev</div>
+          </div>
+        </section>
+  
+        <section class="tShirts" id="tShirts">
+          <div class="carousel">
+            <h3 class="carousel__title" ref="tShirts">Man T-shirts</h3>
+            <p class="carousel__text">
+              We are glad to present you a new male collection of t-shirts 2020
+            </p>
+            <ul class="carousel__ul">
+              <li class="carousel__li" v-for="tShirt in tShirts" :key="tShirt.id">
+                <a href="#" class="carousel__a">
+                  <div class="carousel__img">
+                    <img v-bind:src="tShirt.image" v-bind:alt="tShirt.name">
+                  </div>
+                  <div class="carousel__descr">
+                    <h4 class="carousel__goodsname">{{tShirt.name}}</h4>
+                    <div class="carousel__addtocart">
+                      <p v-on:click="(e) => addToCart(e, tShirt)">Add to Cart</p>
+                    </div>
+                    <p>
+                      {{tShirt.description}}
+                    </p>
+                      <h4 class="carousel__price">${{tShirt.price}}</h4>
+                    <ul class="carousel__ulnested">
+                      <li class="carousel__linested" v-for="size in tShirt.sizes" v-bind:class="{ able: size.isAble }" v-on:click="(e) => setSize(e, tShirt, size.value)">
+                        {{size.value}}
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="carousel__next" v-on:click="next(tShirts)">next</div>
+            <div class="carousel__prev" v-on:click="prev(tShirts)">prev</div>
+          </div>
+        </section>
+      </article>
+
+      <article class="female">
+        <section class="sneakers" id="sneakers">
+          <div class="carousel">
+            <h3 class="carousel__title" ref="wsneakers">Woman Sneakers</h3>
+            <p class="carousel__text">
+              We are glad to present you a new female collection of sneakers 2020
+            </p>
+            <ul class="carousel__ul">
+              <li class="carousel__li" v-for="boot in femsneakers" :key="boot.id">
+                <a href="#" class="carousel__a">
+                  <div class="carousel__img">
+                    <img v-bind:src="boot.image" v-bind:alt="boot.name">
+                  </div>
+                  <div class="carousel__descr">
+                    <h4 class="carousel__goodsname">{{boot.name}}</h4>
+                    <div class="carousel__addtocart">
+                      <p v-on:click="(e) => addToCart(e, boot)">Add to Cart</p>
+                    </div>
+                    <p>
+                      {{boot.description}}
+                    </p>
+                      <h4 class="carousel__price">${{boot.price}}</h4>
+                    <ul class="carousel__ulnested">
+                      <li class="carousel__linested" v-for="size in boot.sizes" v-bind:class="{able: size.isAble}" v-on:click="(e) => setSize(e, boot, size.value)">
+                        {{size.value}}
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <svg class="carousel__down" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44"
+              viewBox="0 0 24 24" v-on:click="scrollDown('wpants')">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+            </svg>
+            <div class="carousel__next" v-on:click="next(femsneakers)">next</div>
+            <div class="carousel__prev" v-on:click="prev(femsneakers)">prev</div>
+          </div>
+        </section>
+  
+        <section class="pants" id="pants">
+          <div class="carousel">
+            <h3 class="carousel__title" ref="wpants">Woman Pants</h3>
+            <p class="carousel__text">
+              We are glad to present you a new female collection of pants 2020
+            </p>
+            <ul class="carousel__ul">
+              <li class="carousel__li" v-for="pant in fempants" :key="pant.id">
+                <a href="#" class="carousel__a">
+                  <div class="carousel__img">
+                    <img v-bind:src="pant.image" v-bind:alt="pant.name">
+                  </div>
+                  <div class="carousel__descr">
+                    <h4 class="carousel__goodsname">{{pant.name}}</h4>
+                    <div class="carousel__addtocart">
+                      <p v-on:click="(e) => addToCart(e, pant)">Add to Cart</p>
+                    </div>
+                    <p>
+                      {{pant.description}}
+                    </p>
+                      <h4 class="carousel__price">${{pant.price}}</h4>
+                    <ul class="carousel__ulnested">
+                      <li class="carousel__linested" v-for="size in pant.sizes" v-bind:class="{able: size.isAble}" v-on:click="(e) => setSize(e, pant, size.value)">
+                        {{size.value}}
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <svg class="carousel__down" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44"
+              viewBox="0 0 24 24" @click="scrollDown('wtShirts')">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+            </svg>
+            <div class="carousel__next" v-on:click="next(fempants)">next</div>
+            <div class="carousel__prev" v-on:click="prev(fempants)">prev</div>
+          </div>
+        </section>
+  
+        <section class="tShirts" id="tShirts">
+          <div class="carousel">
+            <h3 class="carousel__title" ref="wtShirts">Woman T-shirts</h3>
+            <p class="carousel__text">
+              We are glad to present you a new female collection of t-shirts 2020
+            </p>
+            <ul class="carousel__ul">
+              <li class="carousel__li" v-for="tShirt in femtshirts" :key="tShirt.id">
+                <a href="#" class="carousel__a">
+                  <div class="carousel__img">
+                    <img v-bind:src="tShirt.image" v-bind:alt="tShirt.name">
+                  </div>
+                  <div class="carousel__descr">
+                    <h4 class="carousel__goodsname">{{tShirt.name}}</h4>
+                    <div class="carousel__addtocart">
+                      <p v-on:click="(e) => addToCart(e, tShirt)">Add to Cart</p>
+                    </div>
+                    <p>
+                      {{tShirt.description}}
+                    </p>
+                      <h4 class="carousel__price">${{tShirt.price}}</h4>
+                    <ul class="carousel__ulnested">
+                      <li class="carousel__linested" v-for="size in tShirt.sizes" v-bind:class="{ able: size.isAble }" v-on:click="(e) => setSize(e, tShirt, size.value)">
+                        {{size.value}}
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <svg class="carousel__down" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44"
+              viewBox="0 0 24 24" @click="scrollDown('blog')">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+            </svg>
+            <div class="carousel__next" v-on:click="next(femtshirts)">next</div>
+            <div class="carousel__prev" v-on:click="prev(femtshirts)">prev</div>
+          </div>
+        </section>
+      </article>
+
+      <section class="blog" id="blog" ref="blog">
+
+      </section>
+
+    </main>
+
+    <footer class="footer" id="footer">
+      <section class="contacts" id="contacts" ref="contacts">
+
+      </section>
+      <nav>
+        <ul class="header__ul" id="header__ulf">
+
+          <li class="header__li" id="header__lih">
+            <a href="#" class="header__a" id="header__ah">
+              <p>
+                Home
+              </p>
+              <img src="images/shop/sneakers/shoes1-3.jpg" alt="">
+            </a>
+          </li>
+          <li class="header__li" id="header__lisf">
+            <a href="#" class="header__a" id="header__asf">
+              <p>
+                Sneakers
+              </p>
+              <img src="images/shop/sneakers/shoes1-3.jpg" alt="">
+            </a>
+          </li>
+          <li class="header__li" id="header__lipf">
+            <a href="#" class="header__a" id="header__apf">
+              <p>
+                Pants
+              </p>
+              <img src="images/shop/pants/pants4.jpg" alt="">
+            </a>
+          </li>
+          <li class="header__li" id="header__litf">
+            <a href="#" class="header__a" id="header__atf">
+              <p>
+                T-shirts
+              </p>
+              <img src="images/shop/t-shirts/t-shirt1.jpg" alt="">
+            </a>
+          </li>
+          <li class="header__li" id="header__licf">
+            <a href="#" class="header__a" id="header__acf">
+              <p>
+                Contacts
+              </p>
+              <img src="images/shop/sneakers/shoes1-3.jpg" alt="">
+            </a>
+          </li>
+          <li class="header__li" id="header__libf">
+            <a href="#" class="header__a" id="header__abf">
+              <p>
+                shopcart
+              </p>
+              <img src="images/shop/sneakers/shoes1-3.jpg" alt="">
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

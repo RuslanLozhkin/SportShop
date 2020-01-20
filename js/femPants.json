@@ -1,0 +1,277 @@
+{
+    "pants": [
+        {
+            "id": "002101",
+            "name": "Pants Grey Accent",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": true
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/1.jpg",
+            "price": "24.99"
+
+        },
+        {
+            "id": "002102",
+            "name": "Pants Black Classic",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": true
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/2.jpg",
+            "price": "35.99"
+        },
+        {
+            "id": "002103",
+            "name": "Pants Black Panther",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": false
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/3.jpg",
+            "price": "55.55"
+        },
+        {
+            "id": "002104",
+            "name": "Pants Grey Strips",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": false
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": false
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/4.jpg",
+            "price": "35.99"
+        },
+        {
+            "id": "002105",
+            "name": "Pants Two Colors",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": false
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": false
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/5.jpg",
+            "price": "65.45"
+        },
+        {
+            "id": "002106",
+            "name": "Black Lady",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": true
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/6.jpg",
+            "price": "35.99"
+        },
+        {
+            "id": "002107",
+            "name": "Black Flash",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": true
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/7.jpg",
+            "price": "75.95"
+        },
+        {
+            "id": "002108",
+            "name": "Black Flash",
+            "sizes": [
+                {
+                    "value": "S",
+                    "isAble": true
+                },
+                {
+                    "value": "M",
+                    "isAble": true
+                },
+                {
+                    "value": "L",
+                    "isAble": true
+                },
+                {
+                    "value": "XL",
+                    "isAble": true
+                },
+                {
+                    "value": "2XL",
+                    "isAble": true
+                },
+                {
+                    "value": "3XL",
+                    "isAble": true
+                }
+            ],
+            "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
+            "geender": "male",
+            "image": "images/shop/woman/pants/8.jpg",
+            "price": "75.95"
+        }
+    ]
+}

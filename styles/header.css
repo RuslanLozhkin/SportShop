@@ -1,0 +1,326 @@
+.header {
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; }
+  .header h1 {
+    text-align: center;
+    text-transform: capitalize; }
+  .header input:focus::placeholder {
+    display: none; }
+  .header__about {
+    letter-spacing: 0.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    display: block;
+    color: #140f1f;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif; }
+  .header__content {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+  .header__video {
+    width: 100%; }
+  .header__navwrap.hide {
+    display: none; }
+  .header__navwrap.show {
+    display: grid; }
+  .header__navwrap {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: "title title" "ul ul" "user user";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 3rem;
+    padding-bottom: 6rem;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: 'Raleway', sans-serif; }
+  .header__title {
+    grid-area: title;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-family: 'Kaushan Script', cursive;
+    color: #ff6600;
+    z-index: 3; }
+  .header__userwrap {
+    display: grid;
+    grid-area: user; }
+  .header__user {
+    display: grid;
+    grid-auto-rows: 4rem;
+    align-self: end;
+    justify-self: center; }
+    .header__user input {
+      background-color: rgba(255, 255, 255, 0.6);
+      border: none;
+      border-bottom: 2px solid #a5a5a5;
+      height: 3rem;
+      font-size: 2rem;
+      margin-top: 1rem;
+      width: 20rem;
+      padding-left: 1rem;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif; }
+    .header__user .header__enter,
+    .header__user .header__register {
+      background-color: #fff;
+      padding: 0.2rem;
+      border-radius: 0.2rem;
+      cursor: pointer;
+      font-family: 'Kaushan Script', cursive;
+      font-size: 2rem;
+      width: 20rem; }
+      .header__user .header__enter:hover, .header__user .header__enter:focus,
+      .header__user .header__register:hover,
+      .header__user .header__register:focus {
+        background-color: #000;
+        color: #fff; }
+  .header nav {
+    display: grid;
+    grid-area: ul;
+    grid-column: 1 / 3; }
+  .header__ul {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    list-style: none;
+    grid-auto-flow: column; }
+    .header__ul li {
+      align-self: center;
+      justify-self: center;
+      position: relative;
+      width: 20rem;
+      z-index: 3; }
+      .header__ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 3rem; }
+        .header__ul li a p {
+          display: block;
+          text-transform: uppercase;
+          font-weight: 300;
+          text-align: center; }
+      .header__ul li img {
+        display: none;
+        width: 300px;
+        height: 300px;
+        position: absolute; }
+      .header__ul li:hover a,
+      .header__ul li:focus a {
+        color: #a5a5a5; }
+      .header__ul li:nth-child(-n + 3):hover img,
+      .header__ul li:nth-child(-n + 3):focus img {
+        display: block;
+        top: -200%;
+        left: 100%;
+        z-index: -1; }
+      .header__ul li:nth-child(n + 4):hover img,
+      .header__ul li:nth-child(n + 4):focus img {
+        display: block;
+        top: -200%;
+        right: 100%;
+        z-index: -1; }
+  .header__search {
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%); }
+  .header__svg {
+    z-index: 3;
+    width: 24px;
+    height: 24px; }
+  .header__down {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    fill: #140f1f;
+    cursor: pointer; }
+  .header__input {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-bottom: 2px solid #a5a5a5;
+    height: 3rem;
+    margin-top: 5px;
+    font-size: 2rem;
+    width: 20rem; }
+  .header__submit {
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 4rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4d4d4d;
+    background-color: #fff;
+    text-transform: uppercase; }
+    .header__submit:hover svg {
+      fill: #ff6600; }
+    .header__submit:hover {
+      opacity: 0.7; }
+  .header__svg {
+    fill: #000;
+    stroke-width: 2px;
+    width: 1rem;
+    height: 1rem; }
+  .header__menu {
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    display: block;
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    cursor: pointer; }
+    .header__menu img {
+      width: 200px;
+      height: 200px; }
+    .header__menu:hover img {
+      animation: rotateBtn 20s ease 0s infinite; }
+
+@keyframes rotateBtn {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+  .header__p {
+    position: absolute;
+    top: 4.7rem;
+    right: 3.5rem;
+    z-index: 1;
+    font-family: 'Kaushan Script', cursive;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #ff6600; }
+  .header .shopcart.show {
+    display: block; }
+  .header .shopcart.hide {
+    display: none; }
+  .header .shopcart {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg/shopcart.jpg);
+    background-size: cover;
+    z-index: 10;
+    color: #4d4d4d; }
+    .header .shopcart__wrapper {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px 100px 60% 100px;
+      grid-template-areas: "title title" "username username" "list form" "total total";
+      grid-gap: 1rem;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      background-size: cover;
+      padding: 3rem;
+      font-size: 2rem;
+      color: #4d4d4d;
+      text-transform: capitalize; }
+    .header .shopcart h2 {
+      grid-area: title;
+      text-align: center;
+      color: #ff6600;
+      text-transform: capitalize; }
+    .header .shopcart__active {
+      display: flex; }
+    .header .shopcart__username {
+      grid-area: username;
+      font-family: 'Raleway', sans-serif;
+      color: #ff6600; }
+      .header .shopcart__username h3 {
+        text-transform: capitalize;
+        text-align: center; }
+    .header .shopcart__list {
+      grid-area: list;
+      color: #4d4d4d;
+      border-radius: 0.2rem;
+      background-color: white;
+      font-family: 'Raleway', sans-serif; }
+      .header .shopcart__list img {
+        width: auto;
+        height: 100px;
+        border-radius: 0.2rem;
+        opacity: 0.8; }
+      .header .shopcart__list li {
+        padding: 2rem;
+        color: #4d4d4d;
+        display: grid;
+        text-align: center;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-rows: 1fr; }
+    .header .shopcart__ol {
+      height: 100%;
+      color: #4d4d4d;
+      color: #fff;
+      overflow-y: auto; }
+    .header .shopcart__total {
+      font-family: 'Raleway', sans-serif;
+      grid-area: total;
+      margin-left: 2rem;
+      color: #fff;
+      text-align: center; }
+    .header .shopcart__address {
+      font-family: 'Raleway', sans-serif;
+      grid-area: form;
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, 1fr); }
+      .header .shopcart__address input {
+        padding: 1rem;
+        border: none;
+        border-bottom: 2px solid #4d4d4d; }
+      .header .shopcart__address input[type="submit"] {
+        grid-column: 1 / 3;
+        border: none;
+        background-color: #fff;
+        padding: 0.2rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 2rem; }
+        .header .shopcart__address input[type="submit"]:hover, .header .shopcart__address input[type="submit"]:focus {
+          background-color: #000;
+          color: #fff; }
+    .header .shopcart__close {
+      background-color: #fff;
+      padding: 0.2rem;
+      border-radius: 0.2rem;
+      cursor: pointer;
+      font-family: 'Kaushan Script', cursive;
+      font-size: 2rem;
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      transform: translate(-50%, 0); }
+      .header .shopcart__close:hover, .header .shopcart__close:focus {
+        background-color: #000;
+        color: #fff; }
