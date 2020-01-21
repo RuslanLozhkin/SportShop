@@ -715,6 +715,8 @@ section {
     width: 980px; }
   .about {
     width: 980px; }
+    .about p {
+      width: 95%; }
   .carousel {
     width: 650px;
     margin-left: auto;
