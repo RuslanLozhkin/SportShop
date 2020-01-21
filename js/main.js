@@ -5,9 +5,6 @@ const content = new Vue({
         isHide: true,
         isOpenShopcart: false,
         isHideShopcart: true,
-        bootPopup: false,
-        pantPopup: false,
-        tShirtPopup: false,
         first: '',
         last: '',
         localCard: [],
@@ -65,15 +62,6 @@ const content = new Vue({
                 this.isOpenShopcart = false;
                 this.isHideShopcart = true;
             }
-        },
-        switchBootPopup: function () {
-            bootPopup = !bootPopup;
-        },
-        switchPantPopup: function () {
-            pantPopup = !pantPopup;
-        },
-        switchTshirtPopup: function () {
-            tShirtPopup = !tShirtPopup;
         },
         cartSubmit: function () {
             const {
