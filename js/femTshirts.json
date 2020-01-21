@@ -31,7 +31,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/1.jpg",
-            "price": "45.55"
+            "price": "45.55",
+            "imgflag": false
         },
         {
             "id": "003002",
@@ -64,7 +65,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/2.jpg",
-            "price": "34.45"
+            "price": "34.45",
+            "imgflag": false
         },
         {
             "id": "003003",
@@ -97,7 +99,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/3.jpg",
-            "price": "34.45"
+            "price": "34.45",
+            "imgflag": false
         },
         {
             "id": "003004",
@@ -130,7 +133,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/4.jpg",
-            "price": "23.65"
+            "price": "23.65",
+            "imgflag": false
         },
         {
             "id": "003005",
@@ -163,7 +167,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/5.jpg",
-            "price": "45.55"
+            "price": "45.55",
+            "imgflag": false
         },
         {
             "id": "003006",
@@ -196,7 +201,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/6.jpg",
-            "price": "75.45"
+            "price": "75.45",
+            "imgflag": false
         },
         {
             "id": "003007",
@@ -229,7 +235,8 @@
             ],
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/woman/tShirts/7.jpg",
-            "price": "34.45"
+            "price": "34.45",
+            "imgflag": false
         }
     ]
 }

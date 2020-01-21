@@ -8,7 +8,6 @@ const content = new Vue({
         bootPopup: false,
         pantPopup: false,
         tShirtPopup: false,
-        imgIsAble: false,
         first: '',
         last: '',
         localCard: [],
@@ -31,9 +30,24 @@ const content = new Vue({
         tShirts: [],
         femsneakers: [],
         fempants: [],
-        femtshirts: []
+        femtshirts: [],
+        email: '',
+        password: '',
+        // Minimum six characters
+        regp: /^[0-9]{6}$/,
+        reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
     },
     methods: {
+        isEmailValid: function () {
+            return (this.email == "")? "" : 
+                   (this.reg.test(this.email)) ? 
+                   'has-success' : 'has-error';
+        },
+        isPasswordValid: function () {
+            return (this.password == "")? "" :
+                   (this.regp.test(this.password)) ?
+                   'has-success' : 'has-error';
+        },
         swap: function () {
             if (this.isHide === true) {
                 this.isHide = false;
@@ -51,9 +65,6 @@ const content = new Vue({
                 this.isOpenShopcart = false;
                 this.isHideShopcart = true;
             }
-        },
-        imgIsAble: function () {
-            
         },
         switchBootPopup: function () {
             bootPopup = !bootPopup;
@@ -86,18 +97,30 @@ const content = new Vue({
         addToCart: function (event, el) {
             event.preventDefault();
             const addedItem = Object.assign({}, el);
+            addedItem.sizes = '-';
             console.log(addedItem);
             for (let i = 0; i< this.sizes.length; i++) {
                 if ( this.sizes[i].id === addedItem.id) {
                     addedItem.sizes = this.sizes[i].size;
-                    console.log(addedItem.sizes);
                 }
             }
+            console.log(addedItem.sizes);
             this.customerCart.goods.push(addedItem);
             this.customerCart.total += addedItem.price;
             this.customerCart.total = parseFloat(this.customerCart.total);
-            localStorage.setItem('cards', JSON.stringify(addedItem));
-            this.localCard.push(JSON.parse(localStorage.getItem('cards')));
+            localStorage.setItem('cards', JSON.stringify(this.customerCart.goods));
+            //console.log(localStorage.cards);
+            this.localCard = JSON.parse(localStorage.getItem('cards'));
+        },
+        deleteFromCart: function (el) {
+           for (let i = 0; i < this.localCard.length; i++){
+               if (this.localCard[i].id === el.id) {
+                this.localCard.splice(i, 1);
+                this.customerCart.goods.splice(i, 1);
+                localStorage.setItem('cards', JSON.stringify(this.localCard));
+               }
+           }
+           console.log(localStorage.cards);
         },
         setSize: function (event, parent, el) {
             event.preventDefault();

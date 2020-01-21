@@ -32,7 +32,8 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/1.jpg",
-            "price": "24.99"
+            "price": "24.99",
+            "imgflag": false
 
         },
         {
@@ -67,7 +68,8 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/2.jpg",
-            "price": "35.99"
+            "price": "35.99",
+            "imgflag": false
         },
         {
             "id": "002103",
@@ -101,7 +103,8 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/3.jpg",
-            "price": "55.55"
+            "price": "55.55",
+            "imgflag": false
         },
         {
             "id": "002104",
@@ -135,7 +138,8 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/4.jpg",
-            "price": "35.99"
+            "price": "35.99",
+            "imgflag": false
         },
         {
             "id": "002105",
@@ -169,11 +173,12 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/5.jpg",
-            "price": "65.45"
+            "price": "65.45",
+            "imgflag": false
         },
         {
             "id": "002106",
-            "name": "Black Lady",
+            "name": "Black Pants",
             "sizes": [
                 {
                     "value": "S",
@@ -203,7 +208,8 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/6.jpg",
-            "price": "35.99"
+            "price": "35.99",
+            "imgflag": false
         },
         {
             "id": "002107",
@@ -237,11 +243,12 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/7.jpg",
-            "price": "75.95"
+            "price": "75.95",
+            "imgflag": false
         },
         {
             "id": "002108",
-            "name": "Black Flash",
+            "name": "Pink Flash",
             "sizes": [
                 {
                     "value": "S",
@@ -271,7 +278,8 @@
             "description": "Awesome pants for you bro. Just check it out and you'll be happy to own it.",
             "geender": "male",
             "image": "images/shop/woman/pants/8.jpg",
-            "price": "75.95"
+            "price": "75.95",
+            "imgflag": false
         }
     ]
 }

@@ -32,7 +32,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes1.jpg",
-            "price": "45.55"
+            "price": "45.55",
+            "imgflag": false
         },
         {
             "id": "001002",
@@ -66,7 +67,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-1.jpg",
-            "price": "35.59"
+            "price": "35.59",
+            "imgflag": false
         },
         {
             "id": "001003",
@@ -100,7 +102,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-2.jpg",
-            "price": "45.59"
+            "price": "45.59",
+            "imgflag": false
         },
         {
             "id": "001004",
@@ -134,7 +137,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-3.jpg",
-            "price": "35.99"
+            "price": "35.99",
+            "imgflag": false
         },
         {
             "id": "001005",
@@ -168,7 +172,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-4.jpg",
-            "price": "45.99"
+            "price": "45.99",
+            "imgflag": false
         },
         {
             "id": "001006",
@@ -202,7 +207,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes2.jpg",
-            "price": "65.55"
+            "price": "65.55",
+            "imgflag": false
         },
         {
             "id": "001007",
@@ -236,7 +242,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/sports3.jpg",
-            "price": "55.45"
+            "price": "55.45",
+            "imgflag": false
         },
         {
             "id": "001008",
@@ -270,7 +277,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes4.jpg",
-            "price": "35.99"
+            "price": "35.99",
+            "imgflag": false
         },
         {
             "id": "001009",
@@ -304,7 +312,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes4-1.jpg",
-            "price": "45.99"
+            "price": "45.99",
+            "imgflag": false
         },
         {
             "id": "001010",
@@ -338,7 +347,8 @@
             "description": "Awesome sneakers for you bro. Just check it out and you'll be happy to own it.",
             "gender": "male",
             "image": "images/shop/sneakers/shoes5.jpg",
-            "price": "59.99"
+            "price": "59.99",
+            "imgflag": false
         }
     ]
 }

@@ -1,3 +1,28 @@
+.carousel__next, .carousel__prev {
+  position: relative;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer; }
+  .carousel__next::after, .carousel__prev::after {
+    content: "";
+    background: #fff;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s; }
+  .carousel__next:active::after, .carousel__prev:active::after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s; }
+
 .about p, .carousel__text {
   margin-left: auto;
   margin-right: auto;
@@ -15,7 +40,7 @@ main {
   padding-top: 5rem; }
 
 .about {
-  background-color: rgba(11, 8, 17, 0.8);
+  background-color: rgba(11, 8, 17, 0.9);
   width: 1170px;
   margin: auto;
   margin-bottom: 5rem;
@@ -32,7 +57,7 @@ section {
   margin: auto;
   width: 1170px;
   padding: 3rem;
-  background-color: rgba(11, 8, 17, 0.8); }
+  background-color: rgba(11, 8, 17, 0.9); }
 
 .carousel {
   display: grid;
@@ -188,9 +213,59 @@ section {
       color: #fff; }
   .carousel__down {
     position: absolute;
+    transform: scale(0.6) translateX(-50%);
     top: 95%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 49%;
     z-index: 4;
     fill: #a5a5a5;
     cursor: pointer; }
+
+@media only screen and (max-width: 1200px) {
+  section {
+    width: 980px; }
+  .about {
+    width: 980px; }
+  .carousel {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media only screen and (max-width: 980px) {
+  section {
+    width: 600px; }
+  .about {
+    width: 600px; }
+    .about__title {
+      font-size: 2rem; }
+    .about p {
+      width: 400px;
+      font-size: 1rem; }
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px; }
+    .carousel__title {
+      font-size: 2rem; }
+    .carousel__text {
+      width: 300px;
+      font-size: 1rem; }
+    .carousel__ul li {
+      margin-left: 2rem; }
+    .carousel__ulnested li {
+      margin-left: 0; }
+    .carousel__ulnested li + li {
+      margin-left: 0.2rem; }
+    .carousel__prev {
+      left: 20%; }
+    .carousel__next {
+      right: 15%; } }
+
+@media only screen and (max-width: 610px) {
+  section {
+    width: 100%; }
+  .about {
+    width: 100%; }
+    .about__title {
+      font-size: 2rem; }
+    .about p {
+      width: 95%; } }
