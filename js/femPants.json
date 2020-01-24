@@ -33,7 +33,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/1.jpg",
             "price": "24.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
 
         },
         {
@@ -69,7 +69,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/2.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "002103",
@@ -104,7 +104,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/3.jpg",
             "price": "55.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "002104",
@@ -139,7 +139,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/4.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "002105",
@@ -174,7 +174,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/5.jpg",
             "price": "65.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "002106",
@@ -209,7 +209,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/6.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "002107",
@@ -244,7 +244,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/7.jpg",
             "price": "75.95",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "002108",
@@ -279,7 +279,7 @@
             "geender": "male",
             "image": "images/shop/woman/pants/8.jpg",
             "price": "75.95",
-            "imgflag": false
+            "svg": "../images/fff.png"
         }
     ]
 }

@@ -5,6 +5,7 @@ const content = new Vue({
         isHide: true,
         isOpenShopcart: false,
         isHideShopcart: true,
+        entereduser: false,
         first: '',
         last: '',
         localCard: [],
@@ -28,10 +29,12 @@ const content = new Vue({
         femsneakers: [],
         fempants: [],
         femtshirts: [],
+        blog: [],
+        login: '',
         email: '',
         password: '',
         // Minimum six characters
-        regp: /^[0-9]{6}$/,
+        regp: /^[a-zA-Z0-9]{6,}$/,
         reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
     },
     methods: {
@@ -45,6 +48,35 @@ const content = new Vue({
                    (this.regp.test(this.password)) ?
                    'has-success' : 'has-error';
         },
+        //Hardcoded but work
+        register: function (e, email, password) {
+            e.preventDefault();
+            const elEmail = document.getElementById('header__userin');
+            const elPassword = document.getElementById('header__password');
+            if (elEmail.classList.contains('has-success') && 
+                elPassword.classList.contains('has-success')) {
+                if (JSON.parse(localStorage.getItem('email')) === this.email ||
+                    JSON.parse(localStorage.getItem('password') === this.password)) {
+                        alert("You're already registered in the shop.");
+                    } else {
+                        localStorage.setItem('email', JSON.stringify(email));
+                        localStorage.setItem('password', JSON.stringify(password));
+                    }
+            } else {
+                alert("You should input correct data in the form and then click a button.");
+            }
+        },
+
+        enter: function (e, email, password) {
+            e.preventDefault();
+            const storeEmail = JSON.parse(localStorage.getItem('email'));
+            const storePassword = JSON.parse(localStorage.getItem('password'));
+            if (storeEmail === email &&  storePassword === password) {
+                this.login = this.email;
+            } else {
+                alert("You're not registered.");
+            }
+        }, 
         swap: function () {
             if (this.isHide === true) {
                 this.isHide = false;
@@ -84,6 +116,7 @@ const content = new Vue({
         },
         addToCart: function (event, el) {
             event.preventDefault();
+            el.svg = "../images/mark.svg";
             const addedItem = Object.assign({}, el);
             addedItem.sizes = '-';
             console.log(addedItem);
@@ -99,6 +132,7 @@ const content = new Vue({
             localStorage.setItem('cards', JSON.stringify(this.customerCart.goods));
             //console.log(localStorage.cards);
             this.localCard = JSON.parse(localStorage.getItem('cards'));
+            
         },
         deleteFromCart: function (el) {
            for (let i = 0; i < this.localCard.length; i++){
@@ -144,7 +178,7 @@ const content = new Vue({
             console.log(arr);
         },
     },
-    mounted:function () {
+    beforeMount:function () {
         fetch('./js/sneakers.json').then(response => {
             return response.json();
             }).then(data => {
@@ -198,6 +232,13 @@ const content = new Vue({
             }).catch(err => {
                 console.log('Could not fetch data from tShirts.json file');
         });
-
+        fetch('./js/blog.json').then(response => {
+            return response.json();
+            }).then(data => {
+            // Work with JSON data here
+            this.blog = data.blog;
+            }).catch(err => {
+                console.log('Could not fetch data from tShirts.json file');
+        });
     },
 });

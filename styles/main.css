@@ -34,10 +34,17 @@
   line-height: 3rem;
   color: #fff; }
 
+.mark {
+  display: block;
+  position: absolute;
+  top: 5.3rem;
+  left: 2rem; }
+
 main {
   background: url(../images/bg/t-shirts.jpg);
   background-repeat: repeat-y;
-  padding-top: 5rem; }
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
 
 .about {
   background-color: rgba(11, 8, 17, 0.9);
@@ -148,6 +155,7 @@ section {
       text-transform: capitalize;
       text-align: center; }
   .carousel__addtocart {
+    position: relative;
     background-color: #fff;
     padding: 0.2rem;
     border: 2px solid #4d4d4d;

@@ -164,6 +164,15 @@ $bgc5: rgb(20, 15, 31);
             }
         }
     }
+    &__entereduser {
+        font-family: 'Kaushan Script', cursive;
+        color: $bgc2;
+        font-size: 2rem;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     &__userin {
         position: relative;
     }

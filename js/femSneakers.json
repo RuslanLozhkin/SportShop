@@ -37,7 +37,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/1.jpg",
             "price": "45.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001102",
@@ -76,7 +76,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/2.jpg",
             "price": "35.59",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001103",
@@ -115,7 +115,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/3.jpg",
             "price": "45.59",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001104",
@@ -154,7 +154,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/4.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001105",
@@ -193,7 +193,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/5.jpg",
             "price": "45.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001106",
@@ -232,7 +232,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/6.jpg",
             "price": "65.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001107",
@@ -271,7 +271,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/7.jpg",
             "price": "55.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001108",
@@ -310,7 +310,7 @@
             "gender": "male",
             "image": "images/shop/woman/sneakers/8.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         }
     ]
 }

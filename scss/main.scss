@@ -42,10 +42,19 @@ $bgc5: rgb(11, 8, 17);
     line-height: 3rem;
     color: #fff;
 }
+
+.mark {
+    display: block;
+    position: absolute;
+    top: 5.3rem;
+    left: 2rem;
+}
+
 main {
     background: url(../images/bg/t-shirts.jpg);
     background-repeat: repeat-y;
     padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 .about {
     background-color: rgba(11, 8, 17, 0.9);
@@ -180,6 +189,7 @@ section {
         }
     }
     &__addtocart {
+        position: relative;
         background-color: #fff;
         padding: 0.2rem;
         border: 2px solid $bgc4;

@@ -113,6 +113,14 @@
       .header__user .header__register:focus {
         background-color: #000;
         color: #fff; }
+  .header__entereduser {
+    font-family: 'Kaushan Script', cursive;
+    color: #ff6600;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%); }
   .header__userin {
     position: relative; }
   .header nav {

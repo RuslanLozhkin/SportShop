@@ -33,7 +33,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes1.jpg",
             "price": "45.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001002",
@@ -68,7 +68,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-1.jpg",
             "price": "35.59",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001003",
@@ -103,7 +103,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-2.jpg",
             "price": "45.59",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001004",
@@ -138,7 +138,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-3.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001005",
@@ -173,7 +173,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes1-4.jpg",
             "price": "45.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001006",
@@ -208,7 +208,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes2.jpg",
             "price": "65.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001007",
@@ -243,7 +243,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/sports3.jpg",
             "price": "55.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001008",
@@ -278,7 +278,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes4.jpg",
             "price": "35.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001009",
@@ -313,7 +313,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes4-1.jpg",
             "price": "45.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "001010",
@@ -348,7 +348,7 @@
             "gender": "male",
             "image": "images/shop/sneakers/shoes5.jpg",
             "price": "59.99",
-            "imgflag": false
+            "svg": "../images/fff.png"
         }
     ]
 }

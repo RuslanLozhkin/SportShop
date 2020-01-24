@@ -32,7 +32,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt1.jpg",
             "price": "45.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "003002",
@@ -66,7 +66,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt2.jpg",
             "price": "34.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "003003",
@@ -100,7 +100,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt3.jpg",
             "price": "34.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "003004",
@@ -134,7 +134,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt4.jpg",
             "price": "23.65",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "003005",
@@ -168,7 +168,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt5.jpg",
             "price": "45.55",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "003006",
@@ -202,7 +202,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt6.jpg",
             "price": "75.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         },
         {
             "id": "003007",
@@ -236,7 +236,7 @@
             "description": "Awesome t-shirt for you bro. Just check it out and you'll be happy to own it.",
             "image": "images/shop/t-shirts/t-shirt7.jpg",
             "price": "34.45",
-            "imgflag": false
+            "svg": "../images/fff.png"
         }
     ]
 }
