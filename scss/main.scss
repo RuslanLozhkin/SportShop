@@ -75,7 +75,7 @@ main {
 .female {
     margin-top: 5rem;
 }
-section {
+.mainsection {
     margin: auto;
     width: 1170px;
     padding: 3rem;
@@ -285,7 +285,7 @@ section {
     }
 }
 @media only screen  and (max-width: 1200px) {
-    section {
+    .mainsection {
         width: 980px;
     }
     .about {
@@ -298,10 +298,13 @@ section {
         width: 650px;
         margin-left: auto;
         margin-right: auto;
+        &__text {
+
+        }
     }
 }
 @media only screen  and (max-width: 980px) {
-    section {
+    .mainsection {
         width: 600px;
     }
     .about {
@@ -327,7 +330,7 @@ section {
         }
         &__ul {
             li {
-                margin-left: 2rem;
+                //margin-left: 2rem;
             }
         }
         &__ulnested {
@@ -339,15 +342,18 @@ section {
             }
         }
         &__prev {
-            left: 20%;
+            left: 10%;
         }
         &__next {
             right: 15%;
         }
+        &__down {
+            left: 43%;
+        }
     }
 }
 @media only screen and (max-width: 610px) {
-    section {
+    .mainsection {
         width: 100%;
     }
     .about {

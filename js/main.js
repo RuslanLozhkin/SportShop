@@ -6,6 +6,8 @@ const content = new Vue({
         isOpenShopcart: false,
         isHideShopcart: true,
         entereduser: false,
+        switchdetails: false,
+        show: false,
         first: '',
         last: '',
         localCard: [],
@@ -30,7 +32,6 @@ const content = new Vue({
         fempants: [],
         femtshirts: [],
         blog: [],
-        login: '',
         email: '',
         password: '',
         // Minimum six characters
@@ -47,6 +48,11 @@ const content = new Vue({
             return (this.password == "")? "" :
                    (this.regp.test(this.password)) ?
                    'has-success' : 'has-error';
+        },
+        details: function (e) {
+            e.preventDefault;
+            this.switchdetails = !this.switchdetails;
+            
         },
         //Hardcoded but work
         register: function (e, email, password) {
@@ -96,23 +102,7 @@ const content = new Vue({
             }
         },
         cartSubmit: function () {
-            const {
-                zip,
-                country,
-                city,
-                street,
-                number,
-                appartment,
-            } =  this.delAddress;
-            // TODO почитать про диструктуризацию объектов
-            localStorage = { ...localStorage, 
-                                zip, 
-                                country, 
-                                city, 
-                                street, 
-                                number, 
-                                appartment 
-            }
+            localStorage.setItem('delivery', JSON.stringify(this.delAddress));
         },
         addToCart: function (event, el) {
             event.preventDefault();
@@ -131,6 +121,7 @@ const content = new Vue({
             this.customerCart.total = parseFloat(this.customerCart.total);
             localStorage.setItem('cards', JSON.stringify(this.customerCart.goods));
             //console.log(localStorage.cards);
+            localStorage.setItem('total', JSON.stringify(this.customerCart.total));
             this.localCard = JSON.parse(localStorage.getItem('cards'));
             
         },

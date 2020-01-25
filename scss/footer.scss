@@ -71,12 +71,17 @@
         padding-top: 1rem;
         padding-bottom: 1rem;
         position: fixed;
-        top: 2rem;
+        z-index: 10;
+        top: 50%;
         left: -1rem;
+        transform: translateY(-50%);
         display: flex;
         flex-direction: column;
         border-radius: 1rem;
-        background-color: rgba(20, 15, 31, 0.8);
+        background-color: rgba(20, 15, 31, 0.5);
+        &:hover {
+            background-color: rgb(20, 15, 31);
+        }
         a {
             margin-bottom: 1rem;
             color: rgb(255, 102, 0);
@@ -115,6 +120,15 @@
         "ul";
         &__title{
             grid-area: title;
+        }
+        &__links {
+            padding-left: 2rem;
+            padding-right: 0.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            a {
+                font-size: 1.5rem;
+            }
         }
         &__ul {
             grid-area: ul;

@@ -28,7 +28,27 @@
             <p>Close</p>
           </div>
           <div class="header__entereduser" v-bind:class="{entered: entereduser}">
-            {{login}}
+            {{JSON.parse(localStorage.getItem('email'))}}
+            <input type="submit" value="Details" v-on:click="(e) => details(e)"> 
+            <div class="details" v-show="switchdetails">
+              <div class="details__close" v-on:click="{switchdetails = !switchdetails}">close</div>
+              {{JSON.parse(localStorage.getItem('email'))}}
+              <ul>
+                <li v-for="i in JSON.parse(localStorage.getItem('cards'))">
+                  <p>Name: {{i.name}}</p>
+                  <p>Size: {{i.sizes}}</p>
+                  <p>Price: {{i.price}}</p>
+                </li>
+              </ul>
+              <p>Total: {{JSON.parse(localStorage.getItem('total'))}}</p>
+              <div class="details__delivery">
+                <ul>
+                  <li v-for="item in JSON.parse(localStorage.getItem('delivery'))">
+                    {{item}},
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <form class="header__user" id="header__user" action="#">
             <label for="userin">Email</label>
@@ -68,7 +88,7 @@
               </a>
             </li>
             <li class="header__li" id="header__lis">
-              <a href="#" class="header__a" id="header__as" v-on:click="scrollDown('sneakers')">
+              <a href="#" class="header__a" id="header__as" v-on:click="scrollDown('wsneakers')">
                 <p>
                  Female Sneakers
                 </p>
@@ -76,7 +96,7 @@
               </a>
             </li>
             <li class="header__li" id="header__lip">
-              <a href="#" class="header__a" id="header__ap" v-on:click="scrollDown('pants')">
+              <a href="#" class="header__a" id="header__ap" v-on:click="scrollDown('wpants')">
                 <p>
                  Female Pants
                 </p>
@@ -84,7 +104,7 @@
               </a>
             </li>
             <li class="header__li" id="header__lit">
-              <a href="#" class="header__a" id="header__at" v-on:click="scrollDown('tShirts')">
+              <a href="#" class="header__a" id="header__at" v-on:click="scrollDown('wtShirts')">
                 <p>
                  Female T-shirts
                 </p>
@@ -126,13 +146,16 @@
       </div>
       <div class="shopcart" id="shopcart" v-bind:class="{show: isOpenShopcart, hide: isHideShopcart}">
         <div class="shopcart__wrapper">
+          <div class="shopcart__close" v-on:click="closeCart">
+            close
+          </div>
           <h2>Super Sport Shop Cart</h2>
           <div class="shopcart__username" id="shopcart__username">
-            <h3>Lorem Ipsum</h3>
+            <h3>{{JSON.parse(localStorage.getItem('email'))}}</h3>
           </div>
           <div class="shopcart__list" id="shopcart__list">
             <ol class="shopcart__ol" id="shopcart__ol">
-              <li v-for="item in localCard">
+              <li v-for="item in JSON.parse(localStorage.getItem('cards'))">
                 <div class="shopcart__closeitem" v-on:click="deleteFromCart(item)">
                   Delete
                 </div>
@@ -141,7 +164,7 @@
                   price: ${{item.price}}<br>
                   size:  {{item.sizes}}
                 </p>
-                <img v-bind:src="item.image" alt="">
+                <img v-bind:src="item.image" alt="item.image">
               </li>
             </ol>
           </div>
@@ -159,9 +182,6 @@
             <input type="number" name="address" id="addressApp" placeholder="Number of appartments" v-model="delAddress.appartment">
             <input type="submit" id="shopcart__submit" value="Buy" v-on:click="cartSubmit">
           </form>
-          <div class="shopcart__close" v-on:click="closeCart">
-            close
-          </div>
         </div>
       </div>
       <p class="header__about">
@@ -182,7 +202,7 @@ anything – “I will try” has performed miracles.
       </article>
 
       <article class="male">
-        <section class="sneakers" id="sneakers">
+        <section class="sneakers mainsection" id="sneakers">
           <div class="carousel">
             <h3 class="carousel__title" ref="sneakers">Man Sneakers</h3>
             <p class="carousel__text">
@@ -222,7 +242,7 @@ anything – “I will try” has performed miracles.
           </div>
         </section>
   
-        <section class="pants" id="pants">
+        <section class="pants  mainsection" id="pants">
           <div class="carousel">
             <h3 class="carousel__title" ref="pants">Man Pants</h3>
             <p class="carousel__text">
@@ -262,7 +282,7 @@ anything – “I will try” has performed miracles.
           </div>
         </section>
   
-        <section class="tShirts" id="tShirts">
+        <section class="tShirts  mainsection" id="tShirts">
           <div class="carousel">
             <h3 class="carousel__title" ref="tShirts">Man T-shirts</h3>
             <p class="carousel__text">
@@ -304,7 +324,7 @@ anything – “I will try” has performed miracles.
       </article>
 
       <article class="female">
-        <section class="sneakers" id="sneakers">
+        <section class="sneakers  mainsection" id="sneakers">
           <div class="carousel">
             <h3 class="carousel__title" ref="wsneakers">Woman Sneakers</h3>
             <p class="carousel__text">
@@ -344,7 +364,7 @@ anything – “I will try” has performed miracles.
           </div>
         </section>
   
-        <section class="pants" id="pants">
+        <section class="pants  mainsection" id="pants">
           <div class="carousel">
             <h3 class="carousel__title" ref="wpants">Woman Pants</h3>
             <p class="carousel__text">
@@ -383,7 +403,7 @@ anything – “I will try” has performed miracles.
             <div class="carousel__prev" v-on:click="prev(fempants)">prev</div>
           </div>
         </section>
-        <section class="tShirts" id="tShirts">
+        <section class="tShirts  mainsection" id="tShirts">
           <div class="carousel">
             <h3 class="carousel__title" ref="wtShirts">Woman T-shirts</h3>
             <p class="carousel__text">
@@ -423,21 +443,28 @@ anything – “I will try” has performed miracles.
           </div>
         </section>
       </article>
-      <section class="blog" id="blog" ref="blog">
+      <article class="blog  mainsection" id="blog" ref="blog">
         <h2>Blog</h2>
-        <div class="blog__post" v-for="post in blog">
+        <div class="blog__text">
+          <p>
+            In this section we write news and interesting stories. So we're glad to see you in the blog section.
+          </p>
+        </div>
+        <div class="blog__post" v-for="post in blog" v-on:click="post.show = !post.show">
+          <div class="blog__content" v-bind:class="{showBlog: post.show}">
+            <div class="blog__contentwrap">
+              <div class="blog__close" v-on:click="show = !show">close</div>
+              <p class="blog__title">{{post.title}}</p>
+              <p class="blog__p">{{post.body}}</p>
+              <p class="blog__author">{{post.author}}</p>
+            </div>
+          </div>
           <div class="blog__card">
-            <img v-bind:src="post.img" alt="post.img" v-on:click="post.show = !post.show">
+            <img v-bind:src="post.img" alt="post.img">
             <p class="blog__cardtitle">{{post.title}}</p>
           </div>
-          <div class="blog__content" v-bind:class="{showBlog: post.show}">
-            <p class="blog__close" v-on:click="post.show = !post.show">close</p>
-            <p class="blog__title">{{post.title}}</p>
-            <p class="blog__p">{{post.body}}</p>
-            <p class="blog__author">{{post.author}}</p>
-          </div>
         </div>
-      </section>
+      </article>
     </main>
     <footer class="footer" id="footer" ref="footer">
       <p class="footer__title"><a href="#header">Super Sport Shop</a></p>
@@ -465,7 +492,7 @@ anything – “I will try” has performed miracles.
               </a>
           </li>
           <li class="footer__li" id="footer__lis">
-              <a href="#" class="footer__a" id="footer__as" v-on:click="scrollDown('sneakers')">
+              <a href="#" class="footer__a" id="footer__as" v-on:click="scrollDown('wsneakers')">
               <p>
               Female Sneakers
               </p>
@@ -473,14 +500,14 @@ anything – “I will try” has performed miracles.
               </a>
           </li>
           <li class="footer__li" id="footer__lip">
-              <a href="#" class="footer__a" id="footer__ap" v-on:click="scrollDown('pants')">
+              <a href="#" class="footer__a" id="footer__ap" v-on:click="scrollDown('wpants')">
               <p>
               Female Pants
               </p>
               </a>
           </li>
           <li class="footer__li" id="footer__lit">
-              <a href="#" class="footer__a" id="footer__at" v-on:click="scrollDown('tShirts')">
+              <a href="#" class="footer__a" id="footer__at" v-on:click="scrollDown('wtShirts')">
               <p>
               Female T-shirts
               </p>

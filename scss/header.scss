@@ -4,32 +4,6 @@ $bgc3: #a5a5a5;
 $bgc4: #4d4d4d;
 $bgc5: rgb(20, 15, 31);
 
-// %btn {
-//     position: relative;
-//     -webkit-transition-duration: 0.4s; /* Safari */
-//     transition-duration: 0.4s;
-//     text-decoration: none;
-//     overflow: hidden;
-//     cursor: pointer;
-//     &::after {
-//         content: "";
-//         background: #fff;
-//         display: block;
-//         position: absolute;
-//         padding-top: 300%;
-//         padding-left: 350%;
-//         margin-left: -20px!important;
-//         margin-top: -120%;
-//         opacity: 0;
-//         transition: all 0.8s
-//     }
-//     &:active::after {
-//         padding: 0;
-//         margin: 0;
-//         opacity: 1;
-//         transition: 0s;
-//     }
-// }
 .has-success {
     box-shadow: 0 0 20px #0f0;
 }
@@ -172,9 +146,76 @@ $bgc5: rgb(20, 15, 31);
         top: 1rem;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 5;
+        input[type="submit"] {
+            font-size: 1rem;
+            color: rgb(77, 77, 77);
+            grid-column: 1 / 3;
+            border: none;
+            background-color: #fff;
+            padding: 0.2rem;
+            border-radius: 0.2rem;
+            cursor: pointer;
+            font-family: 'Kaushan Script', cursive;
+            &:hover,
+            &:focus {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+        .details {
+            padding: 2rem;
+            overflow: auto;
+            font-size: 1rem;
+            background-color: rgba(11, 8, 17, 0.9);
+            color: #fff;
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 500px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            z-index: 99;
+            &__close {
+                color: #000;
+                background-color: #fff;
+                padding: 0.2rem;
+                border-radius: 0.2rem;
+                cursor: pointer;
+                font-family: 'Kaushan Script', cursive;
+                font-size: 1rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                &:hover,
+                &:focus {
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+            &__delivery {
+                ul {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    list-style: none;
+                    li {
+                        display: flex;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
     }
     &__userin {
         position: relative;
+        z-index: -1;
     }
     nav {
         display: grid;
@@ -234,7 +275,7 @@ $bgc5: rgb(20, 15, 31);
     }
     &__down {
         position: absolute;
-        bottom: 20%;
+        bottom: 15%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 3;
@@ -370,6 +411,7 @@ $bgc5: rgb(20, 15, 31);
             font-size: 1rem;
             color: $bgc4;
             text-transform: capitalize;
+            overflow: auto;
         }
         h2 {
             grid-area: title;
@@ -384,41 +426,54 @@ $bgc5: rgb(20, 15, 31);
             grid-area: username;
             font-family: 'Raleway', sans-serif;
             color: $bgc2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             h3 {
-                text-transform: capitalize;
+                text-transform: none;
                 text-align: center;
             }
         }
         &__list {
             grid-area: list;
             color: $bgc4;
-            border-radius: 0.2rem;
-            background-color: rgb(255, 255, 255);
-            font-family: 'Raleway', sans-serif;
             img {
-                width: auto;
-                height: 100px;
+                width: 180px;
+                height: auto;
                 border-radius: 0.2rem;
                 opacity: 0.8;
             }
             li {
+                overflow: hidden;
+                border-radius: 0.2rem;
+                margin-top: 1rem;
+                background-color: rgba(255,255,255,0.5);
+                width: 250px;
                 position: relative;
                 padding: 2rem;
-                color: $bgc4;
+                color: $bgc1;
                 display: grid;
                 align-items: center;
                 text-align: center;
-                grid-template-columns: 3fr 1fr 1fr;
-                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+                grid-template-rows: 80 80px 200px;
             }
         }
         &__ol {
+            padding: 2rem;
             height: 100%;
             color: $bgc4;
             color: #fff;
             overflow-y: auto;
+            border-radius: 0.2rem;
+            background-color: rgba(11, 8, 17, 0.6);
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
         }
         &__total {
+            grid-area: total;
             font-family: 'Raleway', sans-serif;
             grid-area: total;
             margin-left: 2rem;
@@ -436,8 +491,11 @@ $bgc5: rgb(20, 15, 31);
                 padding: 1rem;
                 border: none;
                 border-bottom: 2px solid $bgc4;
+                background-color: rgba(11, 8, 17, 0.6);
+                color: #fff;
             }
             input[type="submit"] {
+                color: rgb(77, 77, 77);
                 grid-column: 1 / 3;
                 border: none;
                 background-color: #fff;
@@ -478,8 +536,8 @@ $bgc5: rgb(20, 15, 31);
             font-family: 'Kaushan Script', cursive;
             font-size: 1rem;
             position: absolute;
-            top: 2.5rem;
-            right: 1rem;
+            top: 0.5rem;
+            right: 0;
             transform: translate(-50%, 0);
             z-index: 4;
             &:hover,
@@ -586,6 +644,11 @@ $bgc5: rgb(20, 15, 31);
             }
         }
     }
+    .shopcart {
+        h2 {
+            font-size: 3rem;
+        }
+    }
 }
 @media only screen and (max-width: 980px) {
     .header {
@@ -607,6 +670,27 @@ $bgc5: rgb(20, 15, 31);
                 }
             }
         }
+        .shopcart {
+            &__wrapper {
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 100px 60% 55px 100px;
+                grid-template-areas: 
+                "title title"
+                "username username"
+                "list list"
+                "total total"
+                "form form";
+            }
+            h2 {
+                font-size: 3rem;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            &__ol {
+                justify-content: space-around;
+            }
+        }
     }
 }
 @media only screen and (max-width: 880px) {
@@ -616,7 +700,7 @@ $bgc5: rgb(20, 15, 31);
         height: 500px;
         &__title {
             width: 100%;
-            margin-top: 2.5rem;
+            margin-top: 1.5rem;
             font-size: 2rem;
         }
         &__content {
@@ -654,6 +738,29 @@ $bgc5: rgb(20, 15, 31);
                 width: inherit;
             }
         }
+        .shopcart {
+            &__wrapper {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+            &__close {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            &__username h3 {
+                font-size: 1.2rem;
+            }
+            &__address {
+                input {
+                    grid-column: 1 / 3;
+                }
+
+            }
+        }
     }
 }
 @media only screen and (max-width: 480px) {
@@ -662,6 +769,20 @@ $bgc5: rgb(20, 15, 31);
             top: 8rem;
             right: 50%;
             transform: translateX(50%);
+        }
+        .shopcart {
+            &__list {
+                li {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                    width: 90%;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    background-color: rgba(255,255,255, 0.5);
+                }
+            }
         }
     }
 }
