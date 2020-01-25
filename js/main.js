@@ -104,6 +104,9 @@ const content = new Vue({
         cartSubmit: function () {
             localStorage.setItem('delivery', JSON.stringify(this.delAddress));
         },
+        main: function (e) {
+            e.preventDefault;
+        },
         addToCart: function (event, el) {
             event.preventDefault();
             el.svg = "../images/mark.svg";
@@ -118,7 +121,7 @@ const content = new Vue({
             console.log(addedItem.sizes);
             this.customerCart.goods.push(addedItem);
             this.customerCart.total += addedItem.price;
-            this.customerCart.total = parseFloat(this.customerCart.total);
+            console.log(this.customerCart.total);
             localStorage.setItem('cards', JSON.stringify(this.customerCart.goods));
             //console.log(localStorage.cards);
             localStorage.setItem('total', JSON.stringify(this.customerCart.total));

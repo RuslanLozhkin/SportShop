@@ -62,7 +62,7 @@
           </form>
         </div>
         <nav>
-          <ul class="header__ul" id="header__ul">
+          <ul class="header__ul" id="header__ul" v-on:click="(e) => main(e)">
             <li class="header__li" id="header__lis">
               <a href="#" class="header__a" id="header__as" v-on:click="scrollDown('sneakers')">
                 <p>
@@ -100,7 +100,7 @@
                 <p>
                  Female Pants
                 </p>
-                <img src="images/shop/pants/pants4.jpg" alt="Pants">
+                <img src="images/shop//woman/pants/4.jpg" alt="Pants">
               </a>
             </li>
             <li class="header__li" id="header__lit">
@@ -167,7 +167,7 @@
           </div>
           <div class="shopcart__total">
             <p>
-              Total: {{localCard.total}}
+              Total: {{JSON.parse(localStorage.getItem('total'))}}
             </p>
           </div>
           <form action="#" class="shopcart__address" id="shopcart__address">
